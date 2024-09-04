@@ -1,4 +1,5 @@
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -28,7 +29,6 @@ public class PhoneCaseTest {
         WebElement phoneCaseProduct = driver.findElement(By.xpath("/html/body/main/div[2]/div/div/div/div/ul/li[9]/div/div/div[2]/div[1]/h3/a"));
         phoneCaseProduct.click();
         System.out.println("clicked on phone case product");
-
         Thread.sleep(5000);
 
         WebElement productModel = driver.findElement(By.xpath("/html/body/main/section[1]/div/div/div/div/div/div/div/div[2]/div[1]/div/div/div[2]/div/div[2]/div[2]/div[2]/div[2]/span[20]/div"));
@@ -61,6 +61,7 @@ public class PhoneCaseTest {
         System.out.println("selected ring holder");
 
         WebElement addToCartButton = driver.findElement(By.xpath("/html/body/main/section[1]/div/div/div/div/div/div/div/div[2]/div[2]/div[2]/div/button[4]"));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", addToCartButton);
         addToCartButton.click();
         System.out.println("clicked on add to cart button");
         Thread.sleep(10000);
@@ -68,12 +69,6 @@ public class PhoneCaseTest {
         WebElement checkoutButton = driver.findElement(By.xpath("/html/body/main/div[2]/div/div/div/div/div[2]/button"));
         checkoutButton.click();
         System.out.println("clicked on checkout button");
-
-
-
-
-
-
 
         driver.quit();
 

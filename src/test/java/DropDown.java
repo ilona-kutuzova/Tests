@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class DropDown {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
         System.setProperty("webdriver.chrome.driver", "/Users/ilonakutuzova/Downloads/chromedriver-mac-arm64/chromedriver");
 
@@ -23,6 +23,8 @@ public class DropDown {
 
         String currentUrl = driver.getCurrentUrl();
         assertTrue(currentUrl.contains("https://formy-project.herokuapp.com/checkbox"));
+
+        Thread.sleep(5000);
 
         driver.quit();
 
